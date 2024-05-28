@@ -74,6 +74,18 @@
             </div>
         </div>
     </div>
+    <script>
+        function navigateWithFade(url) {
+            document.body.classList.remove('fade-in');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('fade-in');
+        });
+    </script>
 </body>
 
 </html>
