@@ -17,9 +17,9 @@
                 <img src="{{ url_for('static',filename='Cover/style/icons/icon.png') }}" alt="logo" class="logo">
             </div>
             <div class="right-section">
-                <div class="about">About Us</div>
+                <div class="about" onclick="location.href='{{ url_for('static', filename='Profile/index.html') }}';">About Us</div>
                 <div class="FAQ">FAQ</div>
-                <div class="contact">Contact Us</div>
+                <div class="contact" onclick="location.href='{{ url_for('static', filename='Portfolio/index.html') }}';">Contact Us</div>
                 <div class="admin-login">Admin</div>
             </div>
         </div>

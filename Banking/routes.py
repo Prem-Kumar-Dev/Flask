@@ -141,8 +141,14 @@ def get_current_user_id():
     else:
         return None
 
-def table_route(app,db):
+def table_route(app, db):
 
     @app.route('/table')
     def table():
-        return render_template('Table/index.html')
+        user_id = get_current_user_id()
+        if user_id is None:
+            return redirect(url_for('login'))
+
+        transactions = Transaction.query.filter_by(user_id=user_id).all()
+        return render_template('Table/index.html', transactions=transactions)
+
